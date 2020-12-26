@@ -167,7 +167,7 @@ def contact():
     return render_template("contact.html", user=current_user, logged_in=current_user.is_authenticated)
 
 
-@app.route("/new-post")
+@app.route("/new-post", methods=['GET', 'POST'])
 @admin_only
 def add_new_post():
     form = CreatePostForm()
